@@ -1,0 +1,19 @@
+WebDriverIO built on Node.js engine and Uses JS to automate
+Uses Selenium under hood
+All the benefits of Selenium is there
+
+Stable version - WebDriverIO 7 & 6
+node js - 14 or 15 version
+
+npm - node package manager for js programming language
+similar to maven repo as for java, npmjs packages
+
+
+first go to project path - cd
+npm init -y - initialize a new project with default
+
+install webdriverio cli dependency ->  npm install --save-dev @wdio/cli
+
+use node file.js to run
+
+
