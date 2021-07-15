@@ -1,5 +1,5 @@
 //from es6
-class Person {
+module.exports = class Person {
   //constructor gets execute by default while creating objects
   constructor(
     firstName,
@@ -19,12 +19,12 @@ class Person {
 
   //method
   fullName() {
-   // console.log(this.firstName + " " + this.lastName);
-    return this.firstName +' '+ this.lastName;
+    // console.log(this.firstName + " " + this.lastName);
+    return this.firstName + " " + this.lastName;
   }
-}
+};
 
-let person = new Person("Ala", "Sobhan");
+/*let person = new Person("Ala", "Sobhan");
 person.age;
 
 console.log(person.location);
@@ -32,3 +32,4 @@ let n = person.fullName();
 
 let person1 = new Person("pee", "reza");
 console.log(n , person1.fullName());
+*/
