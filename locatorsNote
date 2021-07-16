@@ -1,0 +1,29 @@
+//Locators -  xpath, css , linkText(a) supperted by wdio
+
+//css - highly suggested by wdio - syntax:
+tagName[attribute = 'val']
+tagname#id
+tagname.classname
+#id
+.classname
+
+
+devtools - in console - $("css")
+selectorshub, chropath
+
+Xpath-
+
+//tagname[@attribute - 'val']
+//[@attribute = 'val']
+
+devtools - in console - $x("xpath")
+
+
+element-  $().setValue()- clears and sends chars
+
+//browser.waitUntil(condition, { timeout, timeoutMsg, interval })
+ browser.waitUntil(
+      () => $("#signInBtn").getAttribute("value") === "Sign In",
+      { timeout: 4000, timeoutMsg: "Can get the error msg!" }
+    );
+  });
