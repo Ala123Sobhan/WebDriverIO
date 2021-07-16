@@ -8,12 +8,24 @@ node js - 14 or 15 version
 npm - node package manager for js programming language
 similar to maven repo as for java, npmjs packages
 
+>>project set up
+##first go to project path - cd
+##npm init -y - initialize a new project with default
+##install webdriverio cli dependency ->  npm install --save-dev @wdio/cli
+>>configuration file store webdriverIO settings, testcases browser timeout
+##create + run - configuration file -->   npx wdio config -y
+## npx - will search for wdio/cli in the node modules
+##thn do  "@wdio/sync": "7.6.1" in the package.json and npm install
+##for autocomplete add jsconfig.json file , refresh, close and come back to vs
+##run the testcases --> npx wdio run wdio.conf.js
 
-first go to project path - cd
-npm init -y - initialize a new project with default
-
-install webdriverio cli dependency ->  npm install --save-dev @wdio/cli
-
-use node file.js to run
 
 
+use node file.js to run invidual js files
+//specs: has the testcases
+//npm install to install everything locally
+webdriverIO default testing framework mocha, it supports jasmine,cucumber as well
+spec file - test cases
+describe - test suit
+ inside describe it block has test case ( can have n number of it block)
+ spec file can have multiple describe(test suit)
