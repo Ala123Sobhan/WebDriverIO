@@ -21,9 +21,21 @@ devtools - in console - $x("xpath")
 
 element-  $().setValue()- clears and sends chars
 
+linkText-
+$("=linkText")
+
+partial link text -
+$("*=partial link text") //regulat expression
+
 //browser.waitUntil(condition, { timeout, timeoutMsg, interval })
  browser.waitUntil(
       () => $("#signInBtn").getAttribute("value") === "Sign In",
       { timeout: 4000, timeoutMsg: "Can get the error msg!" }
     );
   });
+
+//get multiple elemnts - $$("css")
+//search scope limit by - 
+ const radioBtn = $$(".customradio");
+
+    radioBtn[1].$(".radiotextsty").click();
