@@ -4,6 +4,7 @@
 tagName[attribute = 'val']
 tagname#id
 tagname.classname
+parent css one space childtagname --- [class = 'whateva'] li
 #id
 .classname
 
@@ -15,6 +16,7 @@ Xpath-
 
 //tagname[@attribute - 'val']
 //[@attribute = 'val']
+parentxpath/childtagname --- //*[@class = 'what']/li
 
 devtools - in console - $x("xpath")
 

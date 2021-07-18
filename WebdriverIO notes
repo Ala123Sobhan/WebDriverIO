@@ -29,3 +29,11 @@ spec file - test cases
 describe - test suit
  inside describe it block has test case ( can have n number of it block)
  spec file can have multiple describe(test suit)
+
+
+//mocha framework has a library called chai which supports assertions for string , number comparing
+//chai - general assertion library, Chai is a BDD / TDD assertion library for node and the browser 
+        that can be delightfully paired with any javascript testing framework.
+install - npm install --save-dev chai
+
+import it in testcase - const expectchai = require('chai').expect
