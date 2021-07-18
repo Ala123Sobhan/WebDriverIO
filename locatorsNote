@@ -41,3 +41,7 @@ $("*=partial link text") //regulat expression
  const radioBtn = $$(".customradio");
 
     radioBtn[1].$(".radiotextsty").click();
+
+
+//take screenshot -
+browser.saveScreenshot("checkbox.png")

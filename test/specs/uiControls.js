@@ -49,7 +49,7 @@ describe("Ecommerce App", () => {
     expectchai(dropdown.getValue()).to.equal("consult");
   });
 
-  it("Dynamic dropdown", () => {
+  xit("Dynamic dropdown", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
@@ -63,11 +63,18 @@ describe("Ecommerce App", () => {
     desiredC[0].click();
     browser.pause(2000);
 
-   // console.log(desiredC[0].isSelected());
+    // console.log(desiredC[0].isSelected());
 
-  // console.log($("#autocomplete").getAttribute("value"))
+    // console.log($("#autocomplete").getAttribute("value"))
 
-  expectchai($("#autocomplete").getAttribute("value")).to.equal("Bangladesh")
+    expectchai($("#autocomplete").getAttribute("value")).to.equal("Bangladesh");
+  });
 
+  xit("Checkbox Verification", () => {
+    browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
+    const chckb = $$("input[type = 'checkbox']");
+    chckb[1].click();
+    expectchai(chckb[1].isSelected()).to.equal(true);
+    browser.saveScreenshot("checkbox.png");
   });
 });
