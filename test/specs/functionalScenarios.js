@@ -11,7 +11,7 @@ describe("JS functional testing", () => {
     browser.pause(3000);
   });
 
-  it("double click alert box handling", () => {
+  xit("double click alert box handling", () => {
     browser.url("http://only-testing-blog.blogspot.com/");
     $("button").scrollIntoView();
     browser.pause(2000);
@@ -25,5 +25,20 @@ describe("JS functional testing", () => {
     );
     browser.acceptAlert();
     // browser.dismissAlert()
+  });
+
+  it("Web Table Validation", () => {
+    browser.maximizeWindow();
+    browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+
+    $("thead tr th:nth-child(1)").click();
+
+    const vegListLocators = $$("tbody tr td:nth-child(1)");
+    const veg = vegListLocators.map((v) => v.getText());
+    console.log(veg);
+    const sortedVeg = veg.sort();
+    console.log(sortedVeg);
+
+    chaiexpect(veg).to.equal(sortedVeg);
   });
 });
