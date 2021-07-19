@@ -1,5 +1,5 @@
 describe("Window Frames", () => {
-  it("parent and child window switch", () => {
+  xit("parent and child window switch", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
@@ -22,8 +22,24 @@ describe("Window Frames", () => {
     console.log(browser.getTitle());
 
     $("#alertbtn").click();
-    browser.pause(3000)
+    browser.pause(3000);
     console.log(browser.getAlertText());
     browser.acceptAlert();
+  });
+
+  it("Handling frames", () => {
+    //no direct access to embedded frames from browser, switch to frame to access it
+
+    browser.maximizeWindow();
+    browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
+
+    $("#courses-iframe").scrollIntoView();
+    console.log($$("a").length);
+    browser.switchToFrame($("iframe#courses-iframe"));
+    console.log($$("a").length);
+    console.log($("=Courses").getTagName());
+    //switch to default content
+    browser.switchToFrame(null);
+    console.log($$("a").length);
   });
 });
