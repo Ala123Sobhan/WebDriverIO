@@ -1,3 +1,5 @@
+const expectchai = require("chai").expect;
+
 describe("ecommerce web", () => {
   it("end to end test", () => {
     browser.maximizeWindow();
@@ -17,8 +19,42 @@ describe("ecommerce web", () => {
       .filter((card) => products.includes(card.$("div h4 a").getText()))
       .map((desiredCard) => desiredCard.$(".card-footer button").click());
 
-    $("*=Checkout").scrollIntoView();
+    chkLink.scrollIntoView();
 
-    browser.pause(3000);
+    //browser.pause(3000);
+
+    chkLink.click();
+    const price = $$("tr td:nth-child(4) strong");
+
+    var proPrice = price.map((p) => parseInt(p.getText().split(".")[1].trim()));
+    console.log(proPrice);
+
+    // reduce returs the accumulator value
+    const total = proPrice.reduce((sum, price) => sum + price, 0);
+    console.log(total);
+
+    const actualTot = parseInt(
+      $("[class = 'text-right'] h3 strong").getText().split(".")[1].trim()
+    );
+
+    //console.log("actual :" + actualTot);
+
+    expectchai(actualTot).to.eq(total);
+
+    $(".btn.btn-success").click();
+    const inputbox = $("#country");
+
+    inputbox.waitForExist();
+    inputbox.setValue("united");
+    $(".lds-ellipsis").waitForExist({ reverse: true });
+
+    $("*=United States of").click();
+    $(".btn.btn-success.btn-lg").click();
+    const text = $(".alert-success").getText();
+
+    //console.log(text)
+
+    expectchai(text).contains("Success! Thank you! Your order will be delivered in next few weeks");
+
   });
 });
