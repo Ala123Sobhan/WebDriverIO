@@ -37,3 +37,8 @@ describe - test suit
 install - npm install --save-dev chai
 
 import it in testcase - const expectchai = require('chai').expect
+
+
+for debugging install plugin - JavaScript Debugger (Nightly)
+ms-vscode.js-debug-nightly
+ 

@@ -26,7 +26,7 @@ exports.config = {
   //["./test/specs/**/*.js"],
 
   specs: ["test/specs/functionalScenarios.js"],
-
+  //test/specs/functionalScenarios.js
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'

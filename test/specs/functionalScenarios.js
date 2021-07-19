@@ -27,18 +27,31 @@ describe("JS functional testing", () => {
     // browser.dismissAlert()
   });
 
-  it("Web Table Validation", () => {
+  xit("Web Table Sort Validation", () => {
     browser.maximizeWindow();
     browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
     $("thead tr th:nth-child(1)").click();
 
     const vegListLocators = $$("tbody tr td:nth-child(1)");
-    const veg = vegListLocators.map((v) => v.getText());
-    console.log(veg);
+    const Originalveg = vegListLocators.map((v) => v.getText());
+
+    console.log(Originalveg);
+    veg = Originalveg.slice();
+    //arrays are passed by reference, original array is mutated and returns a ref
     const sortedVeg = veg.sort();
     console.log(sortedVeg);
 
-    chaiexpect(veg).to.equal(sortedVeg);
+    chaiexpect(Originalveg).to.eql(sortedVeg);
+  });
+
+  it("Web Table Filter Validation", () => {
+    browser.maximizeWindow();
+    browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+    $("[type = 'search']").setValue("Rice");
+    const vlist = $$("tbody tr td:nth-child(1)");
+    expect(vlist).toBeElementsArrayOfSize({ eq: 1 });
+
+    expect(vlist[0]).toHaveTextContaining("Rice");
   });
 });
