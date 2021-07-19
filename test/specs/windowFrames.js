@@ -1,3 +1,6 @@
+const fetch = require("node-fetch");
+const chaiexpect = require("chai").expect;
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 describe("Window Frames", () => {
   xit("parent and child window switch", () => {
     browser.maximizeWindow();
@@ -27,7 +30,7 @@ describe("Window Frames", () => {
     browser.acceptAlert();
   });
 
-  it("Handling frames", () => {
+  xit("Handling frames", () => {
     //no direct access to embedded frames from browser, switch to frame to access it
 
     browser.maximizeWindow();
@@ -41,5 +44,29 @@ describe("Window Frames", () => {
     //switch to default content
     browser.switchToFrame(null);
     console.log($$("a").length);
+  });
+
+  it("Footer link Validation", () => {
+    browser.maximizeWindow();
+    browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
+
+    var linkReport = [];
+    $("#gf-BIG").scrollIntoView();
+    const links = $$("[class = gf-t] a").map((l) => l.getAttribute("href"));
+    console.log("link numbers: " + links.length);
+    //console.log(links);
+    const requests = links.map((url) => browser.call(() => fetch(url)));
+    const statusCodes = requests.map((response) => response.status);
+
+    /*statusCodes.forEach((st) => {
+      chaiexpect(st).to.be.below(400);
+    });*/
+    requests.forEach((res) => {
+      //console.log(res.url + " :  " + res.status);
+      if (res.status >= 400) {
+        console.log(res.url + " failed with a status of " + res.status);
+        chaiexpect(res.status).to.be.below(400);
+      }
+    });
   });
 });
