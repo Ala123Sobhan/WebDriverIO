@@ -7,6 +7,7 @@ tagname.classname
 parent css one space childtagname --- [class = 'whateva'] li
 #id
 .classname
+[attribute *= 'regulare exp(partial val)']
 
 
 devtools - in console - $("css")
