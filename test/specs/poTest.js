@@ -4,6 +4,7 @@ const reviewPage = require("../pageObjects/reviewPage.js");
 const expectchai = require("chai").expect;
 const fs = require("fs");
 let credentials = JSON.parse(fs.readFileSync("test/testData/loginTest.json"));
+let e2eData = JSON.parse(fs.readFileSync("test/testData/e2eTest.json"));
 
 describe("Ecommerce App PO TEST", () => {
   credentials.forEach(({ username, password }) => {
@@ -32,48 +33,50 @@ describe("Ecommerce App PO TEST", () => {
     });
   });
 
-  xit("end to end PO Test", () => {
-    browser.maximizeWindow();
-    browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
-    var products = ["Blackberry", "Nokia Edge"];
+  e2eData.forEach(({ products }) => {
+    it("end to end PO Test", () => {
+      browser.maximizeWindow();
+      browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
+     // var products = ["Blackberry", "Nokia Edge"];
 
-    loginPage.Login("rahulshettyacademy", "learning");
+      loginPage.Login("rahulshettyacademy", "learning");
 
-    checkoutPage.chckLink.waitForExist();
+      checkoutPage.chckLink.waitForExist();
 
-    const cards = checkoutPage.cards;
+      const cards = checkoutPage.cards;
 
-    checkoutPage.addcardstoCart(products);
+      checkoutPage.addcardstoCart(products);
 
-    checkoutPage.chckLink.scrollIntoView();
+      checkoutPage.chckLink.scrollIntoView();
 
-    //browser.pause(3000);
+      //browser.pause(3000);
 
-    checkoutPage.chckLink.click();
-    const prices = checkoutPage.prices;
+      checkoutPage.chckLink.click();
+      const prices = checkoutPage.prices;
 
-    // reduce returs the accumulator value
-    const actualtotal = checkoutPage.productpriceSum();
-    const expectedTot = checkoutPage.getExpectPrice();
+      // reduce returs the accumulator value
+      const actualtotal = checkoutPage.productpriceSum();
+      const expectedTot = checkoutPage.getExpectPrice();
 
-    console.log(actualtotal + ", " + expectedTot);
+      console.log(actualtotal + ", " + expectedTot);
 
-    expectchai(actualtotal).to.eq(expectedTot);
+      expectchai(actualtotal).to.eq(expectedTot);
 
-    reviewPage.successBtn.click();
+      reviewPage.successBtn.click();
 
-    reviewPage.inputBox.waitForExist();
-    reviewPage.inputBox.setValue("united");
-    reviewPage.loadingIcon.waitForExist({ reverse: true });
+      reviewPage.inputBox.waitForExist();
+      reviewPage.inputBox.setValue("united");
+      reviewPage.loadingIcon.waitForExist({ reverse: true });
 
-    reviewPage.desiredCountry.click();
-    reviewPage.purchaseBtn.click();
-    const text = reviewPage.successMsg.getText();
+      reviewPage.desiredCountry.click();
+      reviewPage.purchaseBtn.click();
+      const text = reviewPage.successMsg.getText();
 
-    //console.log(text)
+      //console.log(text)
 
-    expectchai(text).contains(
-      "Success! Thank you! Your order will be delivered in next few weeks"
-    );
+      expectchai(text).contains(
+        "Success! Thank you! Your order will be delivered in next few weeks"
+      );
+    });
   });
 });
