@@ -1,33 +1,38 @@
-const loginPage = require("./pageObjects/LoginPage.js");
-const checkoutPage = require("./pageObjects/checkoutPage");
-const reviewPage = require("./pageObjects/reviewPage.js");
+const loginPage = require("../pageObjects/LoginPage.js");
+const checkoutPage = require("../pageObjects/checkoutPage.js");
+const reviewPage = require("../pageObjects/reviewPage.js");
 const expectchai = require("chai").expect;
+const fs = require("fs");
+let credentials = JSON.parse(fs.readFileSync("test/testData/loginTest.json"));
+
 describe("Ecommerce App PO TEST", () => {
-  xit("Login fail", () => {
-    browser.maximizeWindow();
-    browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
-    //  console.log(browser.getTitle());
-    browser.pause(3000);
-    expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
+  credentials.forEach(({ username, password }) => {
+    it("Login fail", () => {
+      browser.maximizeWindow();
+      browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
+      //  console.log(browser.getTitle());
+      browser.pause(3000);
+      expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
 
-    loginPage.Login("rahulshettyacademy", "learning12");
+      loginPage.Login(username, password);
 
-    //browser.waitUntil(condition, { timeout, timeoutMsg, interval })
+      //browser.waitUntil(condition, { timeout, timeoutMsg, interval })
 
-    browser.waitUntil(
-      () => loginPage.signInbtn.getAttribute("value") === "Sign In",
-      { timeout: 4000, timeoutMsg: "Can get the error msg!" }
-    );
-    const msg = loginPage.alertMsg.getText();
-    console.log("The error msg: " + msg);
+      browser.waitUntil(
+        () => loginPage.signInbtn.getAttribute("value") === "Sign In",
+        { timeout: 4000, timeoutMsg: "Can get the error msg!" }
+      );
+      const msg = loginPage.alertMsg.getText();
+      console.log("The error msg: " + msg);
 
-    const loginMsg = loginPage.pageText;
-    expect(loginMsg).toHaveTextContaining(
-      "(username is rahulshettyacademy and Password is learning)"
-    );
+      const loginMsg = loginPage.pageText;
+      expect(loginMsg).toHaveTextContaining(
+        "(username is rahulshettyacademy and Password is learning)"
+      );
+    });
   });
 
-  it("end to end PO Test", () => {
+  xit("end to end PO Test", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
     var products = ["Blackberry", "Nokia Edge"];
