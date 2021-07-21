@@ -1,7 +1,7 @@
 const expectchai = require("chai").expect;
 
 describe("ecommerce web", () => {
-  it("end to end test", () => {
+  xit("end to end test", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
     var products = ["Blackberry", "Nokia Edge"];
@@ -10,8 +10,8 @@ describe("ecommerce web", () => {
     $("#terms").click();
     $("#signInBtn").click();
 
-    const chkLink = $("*=Checkout");
-    chkLink.waitForExist();
+    browser.pause(3000);
+    $("*=Checkout").waitForExist();
 
     const cards = $$("div[class = 'card h-100']");
 
@@ -54,7 +54,8 @@ describe("ecommerce web", () => {
 
     //console.log(text)
 
-    expectchai(text).contains("Success! Thank you! Your order will be delivered in next few weeks");
-
+    expectchai(text).contains(
+      "Success! Thank you! Your order will be delivered in next few weeks"
+    );
   });
 });

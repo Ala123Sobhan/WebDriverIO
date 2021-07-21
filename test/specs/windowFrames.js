@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const chaiexpect = require("chai").expect;
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 describe("Window Frames", () => {
-  xit("parent and child window switch", () => {
+  it("parent and child window switch", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
@@ -30,7 +30,7 @@ describe("Window Frames", () => {
     browser.acceptAlert();
   });
 
-  xit("Handling frames", () => {
+  it("Handling frames", () => {
     //no direct access to embedded frames from browser, switch to frame to access it
 
     browser.maximizeWindow();
@@ -46,7 +46,7 @@ describe("Window Frames", () => {
     console.log($$("a").length);
   });
 
-  it("Footer link Validation", () => {
+  xit("Footer link Validation", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
@@ -71,7 +71,5 @@ describe("Window Frames", () => {
         chaiexpect(res.status).to.be.below(400);
       }
     });
-
-   
   });
 });

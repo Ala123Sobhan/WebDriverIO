@@ -1,7 +1,7 @@
 const expectchai = require("chai").expect;
 
 describe("Ecommerce App", () => {
-  xit("login form", () => {
+  it("login form", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
     $("input[id = 'username']").setValue("rahulshettyacademy");
@@ -49,7 +49,7 @@ describe("Ecommerce App", () => {
     expectchai(dropdown.getValue()).to.equal("consult");
   });
 
-  xit("Dynamic dropdown", () => {
+  it("Dynamic dropdown", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
@@ -60,17 +60,18 @@ describe("Ecommerce App", () => {
 
     list.forEach((l) => console.log(l.getText()));
     let desiredC = list.filter((l) => l.getText() === "Bangladesh");
+
     desiredC[0].click();
     browser.pause(2000);
 
     // console.log(desiredC[0].isSelected());
 
-    // console.log($("#autocomplete").getAttribute("value"))
+    console.log($("#autocomplete").getAttribute("value"));
 
     expectchai($("#autocomplete").getAttribute("value")).to.equal("Bangladesh");
   });
 
-  xit("Checkbox Verification", () => {
+  it("Checkbox Verification", () => {
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
     const chckb = $$("input[type = 'checkbox']");
     chckb[1].click();

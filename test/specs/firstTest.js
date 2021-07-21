@@ -1,5 +1,5 @@
 describe("Ecommerce App", () => {
-  xit("Login fail page title", () => {
+  it("Login fail page title", () => {
     browser.maximizeWindow();
 
     browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
@@ -32,7 +32,7 @@ describe("Ecommerce App", () => {
     );
   });
 
-  xit("Login success page title", () => {
+  it("Login success page title Smoke", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
     browser.pause(3000);
@@ -42,10 +42,9 @@ describe("Ecommerce App", () => {
     pass.setValue("learning");
     const signIn = $("#signInBtn");
     signIn.click();
-    const chkBtn = $("*=Checkout");
-    //chkBtn.click();
-    chkBtn.waitForExist();
-    chkBtn.click();
+    browser.pause(4000);
+    //  $("a[class = 'nav-link btn btn-primary']").waitForExist();
+    //$("a[class = 'nav-link btn btn-primary']").click();
     expect(browser).toHaveTitleContaining("ProtoCommerce");
   });
 });

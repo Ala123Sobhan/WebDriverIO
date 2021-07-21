@@ -1,7 +1,7 @@
 const chaiexpect = require("chai").expect;
 
 describe("JS functional testing", () => {
-  xit("scrolling and mouse over", () => {
+  it("scrolling and mouse over", () => {
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
     $("#mousehover").scrollIntoView();
     //browser.pause(2000);
@@ -11,7 +11,7 @@ describe("JS functional testing", () => {
     browser.pause(3000);
   });
 
-  xit("double click alert box handling", () => {
+  it("double click alert box handling", () => {
     browser.url("http://only-testing-blog.blogspot.com/");
     $("button").scrollIntoView();
     browser.pause(2000);
@@ -27,7 +27,7 @@ describe("JS functional testing", () => {
     // browser.dismissAlert()
   });
 
-  xit("Web Table Sort Validation", () => {
+  it("Web Table Sort Validation", () => {
     browser.maximizeWindow();
     browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 

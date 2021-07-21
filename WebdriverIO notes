@@ -42,3 +42,10 @@ import it in testcase - const expectchai = require('chai').expect
 for debugging install plugin - JavaScript Debugger (Nightly)
 ms-vscode.js-debug-nightly
  
+
+//run specific test
+npx wdio run wdio.conf.js --mochaOpts.grep Smoke
+
+
+//USE SELENIUM STANDALONE SERVICE FOR CHROME AND FIREFOX PARALLAL EXECUTION
+-- npm install @wdio/selenium-standalone-service --save-dev

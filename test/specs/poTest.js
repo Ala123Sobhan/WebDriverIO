@@ -8,7 +8,7 @@ let e2eData = JSON.parse(fs.readFileSync("test/testData/e2eTest.json"));
 
 describe("Ecommerce App PO TEST", () => {
   credentials.forEach(({ username, password }) => {
-    it("Login fail", () => {
+    it("Login fail Smoke", () => {
       browser.maximizeWindow();
       browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
       //  console.log(browser.getTitle());
@@ -34,14 +34,15 @@ describe("Ecommerce App PO TEST", () => {
   });
 
   e2eData.forEach(({ products }) => {
-    it("end to end PO Test", () => {
+    it("end to end PO Test Smoke", () => {
       browser.maximizeWindow();
       browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
-     // var products = ["Blackberry", "Nokia Edge"];
+      // var products = ["Blackberry", "Nokia Edge"];
 
       loginPage.Login("rahulshettyacademy", "learning");
 
       checkoutPage.chckLink.waitForExist();
+      // browser.pause(4000);
 
       const cards = checkoutPage.cards;
 
@@ -51,14 +52,17 @@ describe("Ecommerce App PO TEST", () => {
 
       //browser.pause(3000);
 
+      //console.log("CHECKOUT LINK CLICK");
+
       checkoutPage.chckLink.click();
+      // console.log("CHECK OUT CLICKED");
       const prices = checkoutPage.prices;
 
       // reduce returs the accumulator value
       const actualtotal = checkoutPage.productpriceSum();
       const expectedTot = checkoutPage.getExpectPrice();
 
-      console.log(actualtotal + ", " + expectedTot);
+      //console.log(actualtotal + ", " + expectedTot);
 
       expectchai(actualtotal).to.eq(expectedTot);
 
