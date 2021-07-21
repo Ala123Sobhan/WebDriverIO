@@ -61,12 +61,17 @@ describe("Window Frames", () => {
     /*statusCodes.forEach((st) => {
       chaiexpect(st).to.be.below(400);
     });*/
+    let count = 0;
     requests.forEach((res) => {
+      count++;
+      console.log(count); // returns 7 , did not check other 13 links as the test got terminated since assertion failed
       //console.log(res.url + " :  " + res.status);
       if (res.status >= 400) {
         console.log(res.url + " failed with a status of " + res.status);
         chaiexpect(res.status).to.be.below(400);
       }
     });
+
+   
   });
 });
