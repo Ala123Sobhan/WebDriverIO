@@ -2,7 +2,7 @@ const chaiexpect = require("chai").expect;
 const fetch = require("node-fetch");
 
 describe("broken link test", function () {
-  it("Footer link Validation", () => {
+  it("Footer link Validation Smoke", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 

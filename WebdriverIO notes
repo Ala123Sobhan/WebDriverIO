@@ -49,3 +49,9 @@ npx wdio run wdio.conf.js --mochaOpts.grep Smoke
 
 //USE SELENIUM STANDALONE SERVICE FOR CHROME AND FIREFOX PARALLAL EXECUTION
 -- npm install @wdio/selenium-standalone-service --save-dev
+
+
+// Set a base URL in order to shorten url command calls in wdio.conf.js
+baseUrl: "https://www.rahulshettyacademy.com"
+
+in testcase -> browser.url("/AutomationPractice/")
