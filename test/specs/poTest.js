@@ -8,7 +8,7 @@ let e2eData = JSON.parse(fs.readFileSync("test/testData/e2eTest.json"));
 
 describe("Ecommerce App PO TEST", () => {
   credentials.forEach(({ username, password }) => {
-    xit("Login fail Smoke", () => {
+    it("Login fail Smoke", () => {
       browser.maximizeWindow();
       browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
       //  console.log(browser.getTitle());
@@ -28,7 +28,7 @@ describe("Ecommerce App PO TEST", () => {
 
       const loginMsg = loginPage.pageText;
       expect(loginMsg).toHaveTextContaining(
-        "(username is rahulshettyacademy and Password is learning)"
+        "(username is rahulshettyacademy and Password is learning ala ala)"
       );
     });
   });
