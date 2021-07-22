@@ -67,7 +67,7 @@ exports.config = {
       "goog:chromeOptions": {
         // to run chrome headless the following flags are required
         // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-        // args: ["--headless", "--disable-gpu"],
+        //args: ["--headless", "--disable-gpu"],
       },
       acceptInsecureCerts: true,
       // If outputDir is provided WebdriverIO can capture driver session logs
@@ -75,25 +75,18 @@ exports.config = {
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
     },
-    {
+    /* {
       // maxInstances can get overwritten per capability. So if you have an in house Selenium
       // grid with only 5 firefox instance available you can make sure that not more than
       // 5 instance gets started at a time.
       maxInstances: 5,
       browserName: "firefox",
-      // specs: ["./test/specs/**/*.js"],
-      "moz:firefoxOptions": {
+   "moz:firefoxOptions": {
         // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
         // args: ['-headless']
       },
-      // If outputDir is provided WebdriverIO can capture driver session logs
-      // it is possible to configure which logTypes to exclude.
-      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-      // excludeDriverLogs: ["bugreport", "server"],
-      //
-      // Parameter to ignore some or all Puppeteer default arguments
-      // ignoreDefaultArgs: ['-foreground'], // set value to true to ignore all default arguments
-    },
+      
+    }*/
   ],
   //
   // ===================
@@ -121,7 +114,7 @@ exports.config = {
   // If you only want to run your tests until a specific amount of tests have failed use
   // bail (default is 0 - don't bail, run all tests).
   bail: 2,
-  
+
   //
   // Set a base URL in order to shorten url command calls. If your `url` parameter starts
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.

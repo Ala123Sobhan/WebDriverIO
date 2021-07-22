@@ -41,8 +41,9 @@ describe("Ecommerce App PO TEST", () => {
 
       loginPage.Login("rahulshettyacademy", "learning");
 
-      checkoutPage.chckLink.waitForExist();
-      // browser.pause(4000);
+      checkoutPage.chckLink.scrollIntoView();
+      checkoutPage.chckLink.waitForClickable();
+      browser.pause(4000);
 
       const cards = checkoutPage.cards;
 

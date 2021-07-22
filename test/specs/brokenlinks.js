@@ -2,22 +2,27 @@ const chaiexpect = require("chai").expect;
 const fetch = require("node-fetch");
 
 describe("broken link test", function () {
-  it("Footer link Validation Smoke", () => {
+  it("Footer link Validation faltu", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
     var linkReport = [];
     $("#gf-BIG").scrollIntoView();
-    const links = $$("[class = gf-t] a").map((l) => l.getAttribute("href"));
-    console.log("link numbers: " + links.length);
+    let links = $$("[class = gf-t] a").map((l) => l.getAttribute("href"));
+    links = links.filter(link => !link.includes("#"))
+    //console.log(links);
     //console.log(links);
     const requests = links.map((url) => browser.call(() => fetch(url)));
+    console.log(requests);
     const statusCodes = requests.map((response) => response.status);
 
     /*statusCodes.forEach((st) => {
-          chaiexpect(st).to.be.below(400);
-        });*/
+      chaiexpect(st).to.be.below(400);
+    });*/
+    let count = 0;
     requests.forEach((res) => {
+      count++;
+      console.log(count); // returns 7 , did not check other 13 links as the test got terminated since assertion failed
       //console.log(res.url + " :  " + res.status);
       if (res.status >= 400) {
         console.log(res.url + " failed with a status of " + res.status);
