@@ -23,6 +23,12 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
+
+  suites: {
+    Login: ["test/specs/firstTest.js", "test/specs/windowFrames.js"],
+    E2E: ["test/specs/poTest.js"],
+  },
+
   //["./test/specs/**/*.js"],
 
   //["./test/specs/**/*.js"],
@@ -67,7 +73,7 @@ exports.config = {
       "goog:chromeOptions": {
         // to run chrome headless the following flags are required
         // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-        //args: ["--headless", "--disable-gpu"],
+        // args: ["--headless", "--disable-gpu"],
       },
       acceptInsecureCerts: true,
       // If outputDir is provided WebdriverIO can capture driver session logs
@@ -123,7 +129,7 @@ exports.config = {
   baseUrl: "http://localhost",
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 15000,
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response

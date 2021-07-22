@@ -55,3 +55,13 @@ npx wdio run wdio.conf.js --mochaOpts.grep Smoke
 baseUrl: "https://www.rahulshettyacademy.com"
 
 in testcase -> browser.url("/AutomationPractice/")
+
+##run specific spec files using suites-
+
+before specs array add this-
+suites:{
+        debitCard:['relative path', 'relative path'],
+        creditCard: ['relative path']
+},
+
+command - npx wdio run wdio.conf.js --suite debitCard

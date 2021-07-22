@@ -42,8 +42,16 @@ describe("Ecommerce App PO TEST", () => {
       loginPage.Login("rahulshettyacademy", "learning");
 
       checkoutPage.chckLink.scrollIntoView();
-      checkoutPage.chckLink.waitForClickable();
-      browser.pause(4000);
+      console.log(checkoutPage.chckLink.isDisplayed());
+      //browser.waitUntil(condition, { timeout, timeoutMsg, interval })
+
+      browser.waitUntil(() => checkoutPage.chckLink.isDisplayed() === true),
+        {
+          timeout: 12000,
+          timeoutMsg: "checkout element not displayed after 120000",
+        };
+      console.log(checkoutPage.chckLink.isDisplayed());
+      // browser.pause(4000);
 
       const cards = checkoutPage.cards;
 
