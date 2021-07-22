@@ -1,0 +1,48 @@
+{
+  "uid" : "ea35814111626a04",
+  "name" : "Footer link Validation",
+  "fullName" : "Window Frames.Footer link Validation",
+  "historyId" : "fae81ab73ec4ed4ede76254c085daf75",
+  "time" : {
+    "start" : 1626966318983,
+    "stop" : 1626966318983,
+    "duration" : 0
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "skipped",
+  "statusMessage" : "Test ignored",
+  "statusTrace" : "undefined",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Window Frames"
+  }, {
+    "name" : "testClass",
+    "value" : "Window Frames"
+  }, {
+    "name" : "testMethod",
+    "value" : "Footer link Validation"
+  }, {
+    "name" : "package",
+    "value" : "Window Frames"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ea35814111626a04.json",
+  "parameterValues" : [ ]
+}

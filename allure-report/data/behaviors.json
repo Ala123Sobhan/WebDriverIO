@@ -1,0 +1,83 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Footer link Validation",
+    "uid" : "ea35814111626a04",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1626966318983,
+      "stop" : 1626966318983,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login fail page title",
+    "uid" : "c8e6e5a3a10db186",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1626967273292,
+      "stop" : 1626967280312,
+      "duration" : 7020
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "chrome-91.0.4472.164" ]
+  }, {
+    "name" : "parent and child window switch",
+    "uid" : "2ac5795a18b8ac01",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1626967273295,
+      "stop" : 1626967292101,
+      "duration" : 18806
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "chrome-91.0.4472.164" ]
+  }, {
+    "name" : "Login success page title Smoke",
+    "uid" : "b151d03d8b84a5c8",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1626967280312,
+      "stop" : 1626967290364,
+      "duration" : 10052
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "chrome-91.0.4472.164" ]
+  }, {
+    "name" : "Handling frames",
+    "uid" : "dde35a3cde0ab661",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1626967292104,
+      "stop" : 1626967295238,
+      "duration" : 3134
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "chrome-91.0.4472.164" ]
+  }, {
+    "name" : "Footer link Validation",
+    "uid" : "a8305c19ce616c81",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1626967295240,
+      "stop" : 1626967301676,
+      "duration" : 6436
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "chrome-91.0.4472.164" ]
+  } ]
+}

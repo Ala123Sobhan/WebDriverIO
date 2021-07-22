@@ -73,7 +73,7 @@ exports.config = {
       "goog:chromeOptions": {
         // to run chrome headless the following flags are required
         // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-        // args: ["--headless", "--disable-gpu"],
+        //args: ["--headless", "--disable-gpu"],
       },
       acceptInsecureCerts: true,
       // If outputDir is provided WebdriverIO can capture driver session logs
@@ -102,6 +102,7 @@ exports.config = {
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   logLevel: "error",
+
   //
   // Set specific log levels per logger
   // loggers:
@@ -173,6 +174,17 @@ exports.config = {
     ui: "bdd",
     timeout: 60000,
   },
+
+  reporters: [
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        // disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
+      },
+    ],
+  ],
   //
   // =====
   // Hooks
@@ -250,8 +262,15 @@ exports.config = {
   /**
    * Function to be executed after a test (in Mocha/Jasmine).
    */
-  // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-  // },
+  afterTest: function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
+    if (error) {
+      browser.takeScreenshot();
+    }
+  },
 
   /**
    * Hook that gets executed after the suite has ended

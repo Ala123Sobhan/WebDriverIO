@@ -46,14 +46,16 @@ describe("Window Frames", () => {
     console.log($$("a").length);
   });
 
-  xit("Footer link Validation", () => {
+  it("Footer link Validation", () => {
     browser.maximizeWindow();
     browser.url("https://www.rahulshettyacademy.com/AutomationPractice/");
 
     var linkReport = [];
     $("#gf-BIG").scrollIntoView();
-    const links = $$("[class = gf-t] a").map((l) => l.getAttribute("href"));
+    let links = $$("[class = gf-t] a").map((l) => l.getAttribute("href"));
     console.log("link numbers: " + links.length);
+
+    links = links.filter((link) => !link.includes("#"));
     //console.log(links);
     const requests = links.map((url) => browser.call(() => fetch(url)));
     const statusCodes = requests.map((response) => response.status);

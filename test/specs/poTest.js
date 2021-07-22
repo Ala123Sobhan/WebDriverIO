@@ -8,7 +8,7 @@ let e2eData = JSON.parse(fs.readFileSync("test/testData/e2eTest.json"));
 
 describe("Ecommerce App PO TEST", () => {
   credentials.forEach(({ username, password }) => {
-    it("Login fail Smoke", () => {
+    xit("Login fail Smoke", () => {
       browser.maximizeWindow();
       browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
       //  console.log(browser.getTitle());
@@ -34,7 +34,8 @@ describe("Ecommerce App PO TEST", () => {
   });
 
   e2eData.forEach(({ products }) => {
-    it("end to end PO Test Smoke", () => {
+    it("end to end PO Test Smoke", function () {
+      this.retries(2);
       browser.maximizeWindow();
       browser.url("https://www.rahulshettyacademy.com/loginpagePractise/#");
       // var products = ["Blackberry", "Nokia Edge"];

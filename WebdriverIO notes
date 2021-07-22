@@ -43,8 +43,7 @@ for debugging install plugin - JavaScript Debugger (Nightly)
 ms-vscode.js-debug-nightly
  
 
-//run specific test
-npx wdio run wdio.conf.js --mochaOpts.grep Smoke
+
 
 
 //USE SELENIUM STANDALONE SERVICE FOR CHROME AND FIREFOX PARALLAL EXECUTION
@@ -56,6 +55,11 @@ baseUrl: "https://www.rahulshettyacademy.com"
 
 in testcase -> browser.url("/AutomationPractice/")
 
+
+//run specific test
+npx wdio run wdio.conf.js --mochaOpts.grep Smoke
+
+
 ##run specific spec files using suites-
 
 before specs array add this-
@@ -65,3 +69,69 @@ suites:{
 },
 
 command - npx wdio run wdio.conf.js --suite debitCard
+
+
+#run specific spec file from cli-
+npx wdio run wdio.conf.js --spec relative_path_to_the_file
+
+
+#exclude spec file using relative path in exclude property in wdio.conf.js
+
+# with npx wdio run wdio.conf.js will trigger only smoke ---->
+
+ mochaOpts: {
+    ui: "bdd",
+    timeout: 60000,
+    grep: "Smoke",
+  },
+
+  //only trigger smoke test
+
+
+  //tests are flaky which are inconsistent-->
+  they start passing rerun
+
+ this.retries(2) , cant be used with arrow function
+
+ ## run flakey test - this.retries(2), dnt use with arrow function
+
+
+ ## wrap commands in scripts like this for end users-
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "LoginTest": "npx wdio run wdio.conf.js --suite Login" -- this one , run using ---> npm run LoginTest
+  },
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "LoginTest": "npx wdio run wdio.conf.js --suite Login",
+    "RegressionTest": "npx wdio run wdio.conf.js",
+    "UATRegression": "npx wdio run wdio.uat.conf.js"
+  },
+
+  run using - npm run LoginTest
+
+
+  ## for allure reporting --
+1.npm install @wdio/allure-reporter --save-dev
+2. add this in wdio.conf.js after mochaOpts -
+reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
+3.//do this for failing tcs screenshot aftertest hook
+  afterTest: function(test, context, { error, result, duration, passed, retries }) {
+  
+    if (error) {
+      browser.takeScreenshot();
+    }
+  },
+
+4. install allure command line tool---
+npm install -g allure-commandline --save-dev
+Displaying the report#
+---- allure generate [allure_output_dir] && allure open
+allure generate allure-results && allure open
+allure generate allure-results --clean && allure open
+wrap this in scripts in package.json for users
