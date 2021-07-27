@@ -1,35 +1,5 @@
 [ {
-  "uid" : "c8e6e5a3a10db186",
-  "name" : "Login fail page title",
-  "time" : {
-    "start" : 1626967273292,
-    "stop" : 1626967280312,
-    "duration" : 7020
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "dde35a3cde0ab661",
-  "name" : "Handling frames",
-  "time" : {
-    "start" : 1626967292104,
-    "stop" : 1626967295238,
-    "duration" : 3134
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "ea35814111626a04",
-  "name" : "Footer link Validation",
-  "time" : {
-    "start" : 1626966318983,
-    "stop" : 1626966318983,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "b151d03d8b84a5c8",
+  "uid" : "3a0ef605b4cfd36c",
   "name" : "Login success page title Smoke",
   "time" : {
     "start" : 1626967280312,
@@ -39,7 +9,27 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "a8305c19ce616c81",
+  "uid" : "a5191fe345e577ac",
+  "name" : "Footer link Validation",
+  "time" : {
+    "start" : 1626966318983,
+    "stop" : 1626966318983,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "142e486be61a3bce",
+  "name" : "parent and child window switch",
+  "time" : {
+    "start" : 1626967273295,
+    "stop" : 1626967292101,
+    "duration" : 18806
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7201199578aebcdb",
   "name" : "Footer link Validation",
   "time" : {
     "start" : 1626967295240,
@@ -49,12 +39,22 @@
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "2ac5795a18b8ac01",
-  "name" : "parent and child window switch",
+  "uid" : "b7d49810d830d1b9",
+  "name" : "Handling frames",
   "time" : {
-    "start" : 1626967273295,
-    "stop" : 1626967292101,
-    "duration" : 18806
+    "start" : 1626967292104,
+    "stop" : 1626967295238,
+    "duration" : 3134
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f606ece041718814",
+  "name" : "Login fail page title",
+  "time" : {
+    "start" : 1626967273292,
+    "stop" : 1626967280312,
+    "duration" : 7020
   },
   "status" : "passed",
   "severity" : "normal"

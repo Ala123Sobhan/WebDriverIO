@@ -8,7 +8,7 @@
     "LoginTest": "npx wdio run wdio.conf.js --suite Login",
     "RegressionTest": "npx wdio run wdio.conf.js --suite E2E",
     "UATRegression": "npx wdio run wdio.uat.conf.js",
-    "GenerateReport": "allure generate allure-results --clean && allure open"
+    "GenerateReport": "allure generate allure-results --clean"
   },
   "repository": {
     "type": "git",

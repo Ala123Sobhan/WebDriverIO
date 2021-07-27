@@ -1,9 +1,8 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
-  "name" : "behaviors",
   "children" : [ {
     "name" : "Footer link Validation",
-    "uid" : "ea35814111626a04",
+    "uid" : "a5191fe345e577ac",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "skipped",
     "time" : {
@@ -16,7 +15,7 @@
     "parameters" : [ ]
   }, {
     "name" : "Login fail page title",
-    "uid" : "c8e6e5a3a10db186",
+    "uid" : "f606ece041718814",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -29,7 +28,7 @@
     "parameters" : [ "chrome-91.0.4472.164" ]
   }, {
     "name" : "parent and child window switch",
-    "uid" : "2ac5795a18b8ac01",
+    "uid" : "142e486be61a3bce",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -42,7 +41,7 @@
     "parameters" : [ "chrome-91.0.4472.164" ]
   }, {
     "name" : "Login success page title Smoke",
-    "uid" : "b151d03d8b84a5c8",
+    "uid" : "3a0ef605b4cfd36c",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -55,7 +54,7 @@
     "parameters" : [ "chrome-91.0.4472.164" ]
   }, {
     "name" : "Handling frames",
-    "uid" : "dde35a3cde0ab661",
+    "uid" : "b7d49810d830d1b9",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -68,7 +67,7 @@
     "parameters" : [ "chrome-91.0.4472.164" ]
   }, {
     "name" : "Footer link Validation",
-    "uid" : "a8305c19ce616c81",
+    "uid" : "7201199578aebcdb",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "failed",
     "time" : {
@@ -79,5 +78,6 @@
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ "chrome-91.0.4472.164" ]
-  } ]
+  } ],
+  "name" : "behaviors"
 }

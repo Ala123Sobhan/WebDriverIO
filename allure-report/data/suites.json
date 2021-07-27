@@ -1,11 +1,10 @@
 {
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
-  "name" : "suites",
   "children" : [ {
     "name" : "Window Frames",
     "children" : [ {
       "name" : "Footer link Validation",
-      "uid" : "ea35814111626a04",
+      "uid" : "a5191fe345e577ac",
       "parentUid" : "122f0334f06262342fb495f325f1594e",
       "status" : "skipped",
       "time" : {
@@ -18,7 +17,7 @@
       "parameters" : [ ]
     }, {
       "name" : "parent and child window switch",
-      "uid" : "2ac5795a18b8ac01",
+      "uid" : "142e486be61a3bce",
       "parentUid" : "122f0334f06262342fb495f325f1594e",
       "status" : "passed",
       "time" : {
@@ -31,7 +30,7 @@
       "parameters" : [ "chrome-91.0.4472.164" ]
     }, {
       "name" : "Handling frames",
-      "uid" : "dde35a3cde0ab661",
+      "uid" : "b7d49810d830d1b9",
       "parentUid" : "122f0334f06262342fb495f325f1594e",
       "status" : "passed",
       "time" : {
@@ -44,7 +43,7 @@
       "parameters" : [ "chrome-91.0.4472.164" ]
     }, {
       "name" : "Footer link Validation",
-      "uid" : "a8305c19ce616c81",
+      "uid" : "7201199578aebcdb",
       "parentUid" : "122f0334f06262342fb495f325f1594e",
       "status" : "failed",
       "time" : {
@@ -61,7 +60,7 @@
     "name" : "Ecommerce App",
     "children" : [ {
       "name" : "Login fail page title",
-      "uid" : "c8e6e5a3a10db186",
+      "uid" : "f606ece041718814",
       "parentUid" : "faba2c99e7b3fb85a0352a971c435027",
       "status" : "passed",
       "time" : {
@@ -74,7 +73,7 @@
       "parameters" : [ "chrome-91.0.4472.164" ]
     }, {
       "name" : "Login success page title Smoke",
-      "uid" : "b151d03d8b84a5c8",
+      "uid" : "3a0ef605b4cfd36c",
       "parentUid" : "faba2c99e7b3fb85a0352a971c435027",
       "status" : "passed",
       "time" : {
@@ -87,5 +86,6 @@
       "parameters" : [ "chrome-91.0.4472.164" ]
     } ],
     "uid" : "faba2c99e7b3fb85a0352a971c435027"
-  } ]
+  } ],
+  "name" : "suites"
 }

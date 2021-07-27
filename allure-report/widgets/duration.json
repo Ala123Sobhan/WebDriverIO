@@ -1,15 +1,15 @@
 [ {
-  "uid" : "b151d03d8b84a5c8",
-  "name" : "Login success page title Smoke",
+  "uid" : "7201199578aebcdb",
+  "name" : "Footer link Validation",
   "time" : {
-    "start" : 1626967280312,
-    "stop" : 1626967290364,
-    "duration" : 10052
+    "start" : 1626967295240,
+    "stop" : 1626967301676,
+    "duration" : 6436
   },
-  "status" : "passed",
+  "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "2ac5795a18b8ac01",
+  "uid" : "142e486be61a3bce",
   "name" : "parent and child window switch",
   "time" : {
     "start" : 1626967273295,
@@ -19,7 +19,7 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "c8e6e5a3a10db186",
+  "uid" : "f606ece041718814",
   "name" : "Login fail page title",
   "time" : {
     "start" : 1626967273292,
@@ -29,7 +29,7 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "ea35814111626a04",
+  "uid" : "a5191fe345e577ac",
   "name" : "Footer link Validation",
   "time" : {
     "start" : 1626966318983,
@@ -39,7 +39,7 @@
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "dde35a3cde0ab661",
+  "uid" : "b7d49810d830d1b9",
   "name" : "Handling frames",
   "time" : {
     "start" : 1626967292104,
@@ -49,13 +49,13 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "a8305c19ce616c81",
-  "name" : "Footer link Validation",
+  "uid" : "3a0ef605b4cfd36c",
+  "name" : "Login success page title Smoke",
   "time" : {
-    "start" : 1626967295240,
-    "stop" : 1626967301676,
-    "duration" : 6436
+    "start" : 1626967280312,
+    "stop" : 1626967290364,
+    "duration" : 10052
   },
-  "status" : "failed",
+  "status" : "passed",
   "severity" : "normal"
 } ]
